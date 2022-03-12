@@ -2,11 +2,25 @@
 layout: default
 ---
 
+<div class="about">
+  <h2>I am a trustworthy developer</h2>
+
+  For me it's not all about the code. My mission is to help you grow the business to make it <b>more profitable and cost efficient.</b>
+  Understanding of <b>client needs</b> and <b>sharing ideas</b> for improvements is my priority.
+  <div class="call-to-action">
+    <a href="/contact" class="button button-red">Work with me!</a>
+    <a href="/about" class="button button-grey">About</a>
+  </div>
+</div>
+
+</hr>
+
 <div class="posts">
+  <h1>Blog posts:</h2>
   {% for post in site.posts %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
 
       <div class="entry">
         {{ post.excerpt }}
