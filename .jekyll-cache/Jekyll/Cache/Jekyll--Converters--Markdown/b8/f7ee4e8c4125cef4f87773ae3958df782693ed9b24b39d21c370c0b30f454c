@@ -1,0 +1,4 @@
+I"<p>Some of legacy project I’ve worked on few years ago received new requirement. We should be able to <code class="language-plaintext highlighter-rouge">Destroy</code> some of the entities from the index page. It sounds like a no-brainer CRUD requirements. But after adding the one liner well known for all Rails devs:</p>
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  = link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' }
+</code></pre></div></div>
+:ET

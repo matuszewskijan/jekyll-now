@@ -1,0 +1,28 @@
+I"<p>Some of legacy project I’ve worked on few years ago received new requirement. We should be able to <code class="language-plaintext highlighter-rouge">Destroy</code> some of the entities from the index page. It sounds like a no-brainer CRUD requirements. But after adding the one liner well known for all Rails devs:</p>
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  = link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' }
+</code></pre></div></div>
+
+<p>I’ve noticed something strange - <strong>request method isn’t right and the data confirmation modals isn’t showing</strong>. I’ve quickly realized that I am missing the Rails UJS initialization in my <code class="language-plaintext highlighter-rouge">application.js</code>:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">Rails</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@rails/ujs</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">Rails</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>After adding that request method and the confirmation windows were displayed. Feature like this shouldn’t take more than 5 minutes so aren’t we already done? Unfortunately, not this time.</p>
+
+<p>For my surprise the controller <code class="language-plaintext highlighter-rouge">destroy</code> method started throwing <code class="language-plaintext highlighter-rouge">Invalid authenticity token</code> error afterwards.</p>
+
+<p>What was the cause? The error message told me only one thing - I am missing the <code class="language-plaintext highlighter-rouge">CSRF token</code> in request payload. But why was the CSRF token even required? It’s a simple <code class="language-plaintext highlighter-rouge">link_to</code>!</p>
+
+<p>To find the answer I had to realize one thing: the <code class="language-plaintext highlighter-rouge">method: :delete</code> isn’t a HTML supported tag. You can’t change link method using only HTML. So when, how it’s done? It must be related to the Rails UJS library right?</p>
+
+<p>Bingo! Long story short - when you click a link with defined <code class="language-plaintext highlighter-rouge">method</code> parameter Rails UJS will catch your request. Create a virtual form setting it’s method to the one specified in <code class="language-plaintext highlighter-rouge">link_to</code>. And finally submit this form. That’s why you might get the <code class="language-plaintext highlighter-rouge">Invalid authenticity token</code> error.</p>
+
+<p>I strongly recommend reading <a href="https://www.ombulabs.com/blog/learning/javascript/behind-the-scenes-rails-ujs.html">this</a> article about the details of Rails UJS. I’ve used this library a lot but in fact never realized what’s the magic behind it.</p>
+
+<p>The point were above, but if you still want some solution for the <code class="language-plaintext highlighter-rouge">Invalid authenticity token</code> error, just not forget as me about the</p>
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;%=</span> <span class="n">csrf_meta_tags</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+<p>in your application layout (<code class="language-plaintext highlighter-rouge">application.html.erb</code>).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">csrf_meta_tags</code> are used by Rails UJS to set the <code class="language-plaintext highlighter-rouge">csrf</code> input in the virtual form which is submitted when <code class="language-plaintext highlighter-rouge">method</code> is used on the link.</p>
+:ET

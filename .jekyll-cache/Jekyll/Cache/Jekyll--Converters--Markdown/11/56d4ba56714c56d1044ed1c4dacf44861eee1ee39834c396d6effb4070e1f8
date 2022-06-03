@@ -1,0 +1,2 @@
+I"J<p>Rails developers like to repeat some phrase like “Convetion Over Configuration”, “Fat Model, Skinny Controller” or “Don’t Repeat Yourself”. Today I am going to focus on the last one: how we can minimze the repeated code in your models using <code class="language-plaintext highlighter-rouge">Concerns</code>.</p>
+:ET

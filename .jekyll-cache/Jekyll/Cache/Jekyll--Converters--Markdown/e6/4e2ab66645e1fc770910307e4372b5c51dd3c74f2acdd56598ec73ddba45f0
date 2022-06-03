@@ -1,4 +1,4 @@
-I"�<p>Given the requirements that client submit himself to a queue that should return results of some heavy background task. The server should be able to skip clients that already left the queue before their input were processed.</p>
+I"�<p>Given the requirements that client submit himself to a queue that should return results of some heavy background task. The server should be able to skip clients that already left the queue before their input were processed.</p>
 
 <p>It doesn’t sound very complicated at the first glance, but Googling for any solution doesn’t return any resources except implementing queuing libraries like RabbitMQ. Our goal were to make the solution relatively straightforward and doesn’t increase complexity of the app by additional library.</p>
 
@@ -22,11 +22,12 @@ redis&gt;
 </code></pre></div></div>
 
 <p>Next step will be to set the expiration time for our JID:</p>
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">redis</span> <span class="o">=</span> <span class="no">Redis</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># Chances are that you already have Redis instance defined</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Rails applications likely do have Redis instance defined</span>
+<span class="n">redis</span> <span class="o">=</span> <span class="no">Redis</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">redis</span><span class="p">.</span><span class="nf">setex</span><span class="p">(</span><span class="n">job_id</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Now if the Sidekiq worker won’t start in 2 seconds it will be completely removed from the queue. I’ve mentioned that we do want the job to be performed only as long as the is present on the page. The last step we need to add is some kind of polling that will reset TTL.</p>
+<p>Now if the scheduled job won’t be picked by Sidekiq worker in next 2 seconds the job will be completely removed from the queue. I’ve mentioned that we do want the job to be performed only as long as the is present on the page. The last step we need to add is some kind of polling that will reset TTL.</p>
 
 <p>For this <a href="https://guides.rubyonrails.org/action_cable_overview.html#example-1-user-appearances">ActionCable</a> might be ideal.</p>
 
