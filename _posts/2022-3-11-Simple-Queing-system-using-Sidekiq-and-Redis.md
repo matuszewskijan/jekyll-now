@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RoR - Client Queueing system using Sidekiq and Redis
+live: true
 ---
 
 Given the requirements that client submit himself to a queue that should return results of some heavy background task. The server should be able to skip clients that already left the queue before their input were processed.

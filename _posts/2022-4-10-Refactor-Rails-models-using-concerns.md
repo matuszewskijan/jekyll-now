@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Refactor Rails models using Concerns
+live: false
 ---
 
 Rails developers like to repeat some phrase like "Convetion Over Configuration", "Fat Model, Skinny Controller" or "Don't Repeat Yourself". Today I am going to focus on the last one: how we can minimze the repeated code in your models using `Concerns`.

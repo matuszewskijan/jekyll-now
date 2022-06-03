@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Debug Rails UJS - Invalid authenticity token error
+live: false
 ---
 
 Some of legacy project I’ve worked on few years ago received new requirement. We should be able to `Destroy` some of the entities from the index page. It sounds like a no-brainer CRUD requirements. But after adding the one liner well known for all Rails devs:
