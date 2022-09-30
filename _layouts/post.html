@@ -13,5 +13,9 @@ layout: default
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 
+  <div class="email-form mt-5">
+    {% include email_form.html %}
+  </div>
+
   {% include disqus.html %}
 </article>

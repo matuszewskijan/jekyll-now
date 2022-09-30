@@ -34,6 +34,19 @@
   background-color: #ffffff;
 }
 
+.button-blue {
+  background-color: #0a51e9d7;
+  border: 0.1em solid #0a27ced7;
+  color: #ffffff;
+  transition-duration: 0.2s;
+}
+
+.button-blue:hover {
+  color: #0a51e9d7;
+  background-color: #ffffff;
+  color: #000;
+}
+
 
 @media all and (max-width:30em) {
   button-grey {
