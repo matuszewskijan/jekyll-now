@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ruby on Rails - Client Queueing system using only Sidekiq and Redis
+title: Ruby on Rails - Client Queueing system using Sidekiq and Redis
 live: true
 ---
 
@@ -71,12 +71,11 @@ When our back-end receives the ping it should recall `redis.setex(job_id, 2)` to
 
 * * *
 #### Did you know?
-It's possible to schedule a Sidekiq worker that isn't stored in calling application:
+It's possible to schedule a Sidekiq worker from outside of your application:
 ```ruby
 Sidekiq::Client.push(queue: 'external', class: 'ExternalWorker', args: [])
 ```
 all you need is access to the Redis instance of source app.
-
 * * *
 
 ### Inform the user about queue length
@@ -84,21 +83,15 @@ all you need is access to the Redis instance of source app.
 ```ruby
 # https://www.rubydoc.info/github/mperham/sidekiq/Sidekiq/Queue#initialize-instance_method
 queue = Sidekiq::Queue.new('default')
-length = queue.length
-latency = queue.latency
+aprox_wait_time = queue.length / queue.latency
 ```
 
 Having the queue length and the latency(time between last processed job) we could try to calculate how long the user will wait.
-Let's assume that client is 600 in queue and latency is 0.5s => `(600 * 0.5 = 300s => 30min)`.
+Let's assume that client number in queue is 600 and the queue latency is 0.5s => `(600 * 0.5 = 300s => 30min)`.
 
-This calculation will give you only the estimation as latency could vary. Unfortunately, I don't know any method to find out the position of key in Redis list. If we'd be able to find out it then we could recalculate the position for every front-end ping, currently we could only calculate it at the moment of scheduling the worker.
-
-
-```
-job_id = Sidekiq::Client.push(queue: '', class: '', args: [])
-redis.setex(job_id, 2)
-redis.llen('queue:default')
-```
+This calculation will give you only the estimation as latency could vary. ATM I don't know the method to find out the position of key in Redis list. If we'd be able to find out it then we could recalculate the position for every front-end ping, currently we could only calculate it at the moment of scheduling the worker.
 
 
-[https://picsum.photos/]
+### Result
+
+Using this strategy you can scale your application easily, simple spawning of additional Sidekiq workers is very simple and cost-efficent, the only limit might be database capacity but it's a completely different topic. External API limits might also cause problems there, but if you can't increase the limits then even the best solutions won't help.
