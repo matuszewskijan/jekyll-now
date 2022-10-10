@@ -11,7 +11,7 @@ excerpt: Building a platform issuing COVID-19 passports is a very diffcult task 
 
 ## Background
 
-I and my colleague worked together on a very interesting application: **COVID-19 passport issuing platform**. The requirements were very simple:
+My colleague and I worked together on a very interesting application: **COVID-19 passport issuing platform**. The requirements were very simple:
 1. End-user input their details into the web form
 2. We are validating the input whether it's a legit person
 3. If the validation is successful we're generating PDF with the passport
@@ -63,6 +63,7 @@ When you schedule Sidekiq worker with `#perform_async` the Redis key is the resu
 ```ruby
 001:0> job_id = ExampleSidekiqWorker.perform_async
 => "fc3f44f792492883d843fac4"
+002:0> job_id = ExampleJob.perform_later.job_id # ActiveJob alternative
 ```
 <div class="text-grey font-small"><i>I've tried to find the equivalent of the jid for ActiveJob - but didn't find anything like it, if you know if it's possible in ActiveJob please share in the comments.</i></div>
 
@@ -100,6 +101,14 @@ Having the queue length and the latency(time between the last processed job) we 
 Let's assume that client number in queue is 600 and the queue latency is 0.5s => `(600 * 0.5 = 300s => 30min)`.
 
 This calculation will give you only the estimation as latency could vary. ATM I don't know the method to find out the position of the key in Redis list. If we'd be able to find out it then we could recalculate the position for every front-end ping, currently, we could only calculate it at the moment of scheduling the worker.
+
+### Retrieving results
+
+Once the private back-end server process the job successfuly we were changing the value of the `job_id` Redis key to the URL of passport PDF. We were also setting the key expiration(`setex`) in Redis to 10 minutes to make sure the passport is publicly available only for a short period of time.
+
+Afterall next front-end poll will read the passport PDF url from Redis and redirect the user to a success page showing the PDF.
+
+On top of that there was a cookie signature ensuring that no-one with only the public URL could access the passport.
 
 
 ### Result
