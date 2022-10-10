@@ -65,7 +65,6 @@ When you schedule Sidekiq worker with `#perform_async` the Redis key is the resu
 => "fc3f44f792492883d843fac4"
 002:0> job_id = ExampleJob.perform_later.job_id # ActiveJob alternative
 ```
-<div class="text-grey font-small"><i>I've tried to find the equivalent of the jid for ActiveJob - but didn't find anything like it, if you know if it's possible in ActiveJob please share in the comments.</i></div>
 
 Next step will be to set the expiration time for our JID:
 ```ruby
