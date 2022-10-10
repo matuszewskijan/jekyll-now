@@ -19,3 +19,19 @@ You can also send any questions to my email:
   ![I am a trustworthy developer](/images/jan-matuszewski.jpg)
 </div>
 <div>
+
+
+<div markdown="1">
+
+**Technologies I expertise at:** Ruby, Ruby on Rails, JavaScript, React, PostgreSQL, Docker, API integrations.
+
+**Languages:** English, Spanish, Polish.
+
+**Still learning:** Marketing, DB optimization, data structures, team management.
+
+<a href="/about-me" class="button button-grey">Read More About Me</a>
+
+or
+
+<a href="/blog" class="button button-grey">Visit My Blog</a>
+</div>
