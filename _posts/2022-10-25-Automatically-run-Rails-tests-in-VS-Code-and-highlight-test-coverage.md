@@ -80,7 +80,7 @@ end
 ```
 
 Voila! Now when hitting `CTRL + S` on any file from `/app` folder I do get coverage higlights in gutter:
-![VS Code coverage gutters for Rails application](/images/VS-Code-coverage-gutters-for-Rails-application.png)
+![VS Code coverage gutters for Rails application](/images/VS-Code-coverage-gutters-for-rails-application.png)
 
 ### Extension Configuration
 Every project is different so it might be that you have to change some configuration options as it's set up to support RSpec by default:
