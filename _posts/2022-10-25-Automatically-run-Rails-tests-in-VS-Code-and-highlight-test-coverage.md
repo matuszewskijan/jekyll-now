@@ -2,6 +2,7 @@
 layout: post
 title: Automatically Run Rails tests in VS Code and highlight test coverage
 live: true
+excerpt: Empower your IDE to automatically run RSpec/Minitest tests. Get code coverage highlights with VS Code extension and a few lines of code changed.
 ---
 
 Man, I love TDD... but once every few times I forget to run my tests after doing changes.
