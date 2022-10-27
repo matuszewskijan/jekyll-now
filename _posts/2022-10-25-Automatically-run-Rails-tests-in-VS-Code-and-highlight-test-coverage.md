@@ -7,31 +7,31 @@ excerpt: Empower your IDE to automatically run RSpec/Minitest tests. Get code co
 
 Man, I love TDD... but once every few times I forget to run my tests after doing changes.
 
-> My brain resists typing `rspec spec/models/changed_spec.rb` as finding the right test file and typing it's path takes too much time and energy, and running the whole suite takes too much time.
+> My brain resists typing `rspec spec/models/changed_spec.rb` as finding the right test file and typing its path takes too much time and energy, the same applies to running the whole test suite.
 
 
-What happens next is - me push the untested code to Github just to realize after a few minutes that continuous integration is red. At this moment I've already switched context to something else so I need to spend a lot of energy to understand the pipeline output just to discover the fix might took me only a few seconds to fix if I'd done it in the first place. Overall my feedback loop takes minutes when it could definitely be seconds.
+What happens next is - I push the untested code to Github just to realize after a few minutes that continuous integration is failing. At this moment I've likely already switched context to something else so I need to spend a lot of energy to understand the pipeline output just to discover the fix might took me only a few seconds to fix if I'd done it in the first place. Overall my feedback loop takes minutes when it could definitely be seconds.
 
 Is it happening only to me?
 
-Even if the answer is yes - the typical flow of starting test files from the command line seems simply too slow for me so maybe there is a way to make it automatically?
+Even if the answer is yes - the typical flow of starting test files from the command line seems simply too slow for me. Maybe there is a way to make it automatically?
 
-**To answer this question with yes...**
+**And to answer this question with yes...**
 
 ### I wrote my own VS Code extension
 
-The idea was simple: "if all test files follow a strict naming convention then it should be possible to find corresponding test files for all files from the `/app` directory". Leveraging this I should be able to run `rspec spec/models/user_spec.rb` automatically after saving `app/models/user.rb`.
+The idea was simple: "if all test files follow a strict naming convention then it should be possible to find corresponding test files for all entries from the `/app` directory". Leveraging this I should be able to run `rspec spec/models/user_spec.rb` command automatically after saving `app/models/user.rb`.
 
 #### How I'd know if the tests are passing?
 That's why I decided to use a VS Code extension instead of `Guard` script. The extension will automatically switch your terminal view to the `Tests` channel in the output tab with the results of the test command execution:
 ![Vaccination Portal Architecture](/images/Rails-Automatic-Test-Runner-output.png)
-**Save your source file to automatically run its test** - the extension is available on Visual Studio Marketplace - [Rails Automatic Test Runner.](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner).
+**Save your source file to automatically run its test.** The extension is available on Visual Studio Marketplace: [Rails Automatic Test Runner.](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner)
 
 I am using it for a few days already, tried it with both `rspec` and `minitest` projects, and I am very happy with the results so far!
 
 I have some ideas for improvements, mostly adding more configuration options to ensure it could work with any project. But before I would do so...
 
-#### I encourage you to test the extension and leave feedback. Do you find it useful? Would you incorporate it to your everyday workflow? If not, why not?
+### I encourage you to [test the extension](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner) and leave feedback. Do you find it useful? Would you incorporate it to your everyday workflow? If not, why not?
 Share your thoughts in the comments, [marketplace review](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner&ssr=false#review-details) or simply drop me a [message](mailto:matuszewski.jan@hotmail.com).
 
 ## Code Coverage highlighting
