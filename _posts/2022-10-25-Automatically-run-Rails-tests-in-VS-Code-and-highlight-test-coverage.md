@@ -34,6 +34,21 @@ I have some ideas for improvements, mostly adding more configuration options to 
 ### I encourage you to [test the extension](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner) and leave feedback. Do you find it useful? Would you incorporate it to your everyday workflow? If not, why not?
 Share your thoughts in the comments, [marketplace review](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner&ssr=false#review-details) or simply drop me a [message](mailto:matuszewski.jan@hotmail.com).
 
+***
+
+<div class="" markdown="1" style="margin-left: 15pt;margin-right: 15pt;">
+<p class="text-grey font-small">Advertisment</p>
+Every few seconds spent on repetitive tasks are hours in the long run. Hours that could be spent on generating value for your business.
+
+My passion is to locate and optimize any pitfalls so my clients could focus fully on their growth. Sounds interesting?
+
+<p class="centered">
+<a href="/contact" class="button button-red centered">Let's talk!</a>
+</p>
+</div>
+
+***
+
 ## Code Coverage highlighting
 Having the tests running automatically I thought it'd be cool to also highlight line coverage in my IDE, as I saw that Rubymine could do it and I also wanted such a feature. Luckily for VS Code there is the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) extension that should help to achieve exactly that.
 
