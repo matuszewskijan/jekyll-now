@@ -16,14 +16,14 @@ You can also send any questions to my email:
 </div>
 
 <div class="right" markdown="1">
-  ![I am a trustworthy developer](/images/jan-matuszewski.jpg)
+  ![I am a trustworthy engineer](/images/jan-matuszewski.jpg)
 </div>
 <div>
 
 
 <div markdown="1">
 
-**Technologies I expertise at:** Ruby, Ruby on Rails, JavaScript, React, PostgreSQL, Docker, API integrations.
+**Technologies I expertise at:** Ruby, Ruby on Rails, JavaScript, TypeScript, React, PostgreSQL, Docker, API integrations.
 
 **Languages:** English, Spanish, Polish.
 
