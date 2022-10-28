@@ -25,14 +25,14 @@ The idea was simple: "if all test files follow a strict naming convention then i
 #### How I'd know if the tests are passing?
 That's why I decided to use a VS Code extension instead of `Guard` script. The extension will automatically switch your terminal view to the `Tests` channel in the output tab with the results of the test command execution:
 ![Vaccination Portal Architecture](/images/Rails-Automatic-Test-Runner-output.png)
-**Save your source file to automatically run its test.** The extension is available on Visual Studio Marketplace: [Rails Automatic Test Runner.](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner)
+**Save your source file to automatically run its test.** The extension is available on Visual Studio Marketplace: [Rails Automatic Test Runner.](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner){:target="_blank"}
 
 I am using it for a few days already, tried it with both `rspec` and `minitest` projects, and I am very happy with the results so far!
 
 I have some ideas for improvements, mostly adding more configuration options to ensure it could work with any project. But before I would do so...
 
-### I encourage you to [test the extension](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner) and leave feedback. Do you find it useful? Would you incorporate it to your everyday workflow? If not, why not?
-Share your thoughts in the comments, [marketplace review](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner&ssr=false#review-details) or simply drop me a [message](mailto:matuszewski.jan@hotmail.com).
+### I encourage you to [test the extension](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner){:target="_blank"} and leave feedback. Do you find it useful? Would you incorporate it to your everyday workflow? If not, why not?
+Share your thoughts in the comments, [marketplace review](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner&ssr=false#review-details){:target="_blank"} or simply drop me a [message](mailto:matuszewski.jan@hotmail.com).
 
 ***
 
@@ -50,7 +50,7 @@ My passion is to locate and optimize any pitfalls so my clients could focus full
 ***
 
 ## Code Coverage highlighting
-Having the tests running automatically I thought it'd be cool to also highlight line coverage in my IDE, as I saw that Rubymine could do it and I also wanted such a feature. Luckily for VS Code there is the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) extension that should help to achieve exactly that.
+Having the tests running automatically I thought it'd be cool to also highlight line coverage in my IDE, as I saw that Rubymine could do it and I also wanted such a feature. Luckily for VS Code there is the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters){:target="_blank"} extension that should help to achieve exactly that.
 
 All actions needed are:
 1. Install the extension and click the **Watch** icon added to the footer
