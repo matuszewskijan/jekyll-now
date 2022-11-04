@@ -352,3 +352,11 @@ code {
 .centered {
   text-align: center;
 }
+
+td, th {
+  border: 1px solid black;
+}
+
+table {
+  margin-bottom: 25px;
+}
