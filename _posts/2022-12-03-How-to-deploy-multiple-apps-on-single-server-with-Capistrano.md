@@ -22,7 +22,9 @@ append :linked_files, *%w[config/database.yml config/master.key config/credentia
 
 We're defining a list of application names that are allowed on our server. Users deploying the app will have to provide an `APPLICATION` environment variable, an error will be raised when it's missing.
 
-We also have to define `linked_files` with list of the files that should be different between applications. In this case it's different set of database credentials, `master.key` file and different Rails encrypted credentials. If you're unfamiliar with `linked_files` then see [capistrano-linked-files](https://github.com/runar/capistrano-linked-files).
+The `set :application, ENV['APPLICATION']` is essential here. The change in the `application` directive is making Capistrano deploy all of the files to a different directory.
+
+We also have to define `linked_files` with a list of the files that should be different between applications. In this case, it's a different set of database credentials, `master.key` file and different Rails encrypted credentials. If you're unfamiliar with `linked_files` then see [capistrano-linked-files](https://github.com/runar/capistrano-linked-files).
 
 The command that we'll use to perform the deployment:
 ```sh
