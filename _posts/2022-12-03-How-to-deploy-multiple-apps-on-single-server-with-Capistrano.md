@@ -6,9 +6,9 @@ live: true
 
 Almost everyone uses cloud hosting solutions like Heroku or AWS nowadays(and I don't expect it to change even after [this DHH post](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0)). But if you still self-host your apps then [Capistrano](https://github.com/capistrano/capistrano) would be well known to you.
 
-My client had an uncommon requirement - to deploy two versions of the same application twice on one server. We were already using `Capistrano` there so I started lurking how to quickly fulfil the client's needs. 
+My client had an uncommon requirement - to deploy two versions of the same application twice on one server. The applications should use the same codebase but a different database, credentials and domain address as we wanted to perform some experiments.
 
-Not getting into the details of `why` let me show you `how` to do it:
+We were already using `Capistrano` for deployment so I came up with such solution:
 ```ruby
 # config/deploy.rb
 APPLICATIONS = %w[app1 app2]
@@ -20,9 +20,18 @@ set :application, ENV['APPLICATION']
 append :linked_files, *%w[config/database.yml config/master.key config/credentials.yml.enc]
 ```
 
+***
+*Some people will say that it's a dirty hack: yes it is in some way. But in programming you always have to take some trade-offs. Here we traded the possiblity of configuring each application(as we'll have only one config for everything) for the possiblity of performing quick experiments on different domains.*
+
+*Cost-wise this implementation took us minutes reusing already owned server. If the experiment will be a success then it shuldn't be difficult to move the app to it's separate server to have a fully-fledged deployment configuration.*
+
+*We decided that in the current moment the trade-off is worth it.*
+
+***
+
 We're defining a list of application names that are allowed on our server. Users deploying the app will have to provide an `APPLICATION` environment variable, an error will be raised when it's missing.
 
-The `set :application, ENV['APPLICATION']` is essential here. The change in the `application` directive is making Capistrano deploy all of the files to a different directory.
+The `set :application, ENV['APPLICATION']` is essential here. The change in the `application` directive is making Capistrano deploy all of the files to a *different directory*.
 
 We also have to define `linked_files` with a list of the files that should be different between applications. In this case, it's a different set of database credentials, `master.key` file and different Rails encrypted credentials. If you're unfamiliar with `linked_files` then see [capistrano-linked-files](https://github.com/runar/capistrano-linked-files).
 
