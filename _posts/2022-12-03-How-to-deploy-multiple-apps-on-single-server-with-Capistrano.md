@@ -4,11 +4,11 @@ title: How to deploy multiple Rails apps on a single server with Capistrano
 live: true
 ---
 
-Almost everyone uses cloud hosting solutions like Heroku or AWS nowadays(and I don't expect it to change even after [this DHH post](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0)). But if you still self-host your apps then [Capistrano](https://github.com/capistrano/capistrano) would be well known to you.
+Almost everyone uses cloud hosting solutions like Heroku or AWS nowadays(and I don't expect it to change even after [this DHH post](https://world.hey.com/dhh/why-we-re-leaving-the-cloud-654b47e0){:target="_blank"}). But if you still self-host your apps then [Capistrano](https://github.com/capistrano/capistrano){:target="_blank"} would be well known to you.
 
 My client had an uncommon requirement - to deploy two versions of the same application twice on one server. The applications should use the same codebase but a different database, credentials and domain address as we wanted to perform some experiments.
 
-Let me first show you my solution which wasn't ideal, then I'll try to cover more correct solution proposed to me after I first shared this article on [Reddit](https://www.reddit.com/r/ruby/comments/zboed1).
+Let me first show you my solution which wasn't ideal, then I'll try to cover more correct solution proposed to me after I first shared this article on [Reddit](https://www.reddit.com/r/ruby/comments/zboed1){:target="_blank"}.
 
 ## Naive approach
 
@@ -28,7 +28,7 @@ We're defining a list of application names that are allowed on our server. Users
 
 As mentioned `set :application, ENV['APP']` is essential here. The change in the `application` directive is making Capistrano deploy all of the files to a *different directory*.
 
-We also have to define `linked_files` with a list of the files that should be different between applications. In this case, it's a different set of database credentials, `master.key` file and different Rails encrypted credentials. If you're unfamiliar with `linked_files` then see [capistrano-linked-files](https://github.com/runar/capistrano-linked-files).
+We also have to define `linked_files` with a list of the files that should be different between applications. In this case, it's a different set of database credentials, `master.key` file and different Rails encrypted credentials. If you're unfamiliar with `linked_files` then see [capistrano-linked-files](https://github.com/runar/capistrano-linked-files){:target="_blank"}.
 
 The command that we'll use to perform the deployment:
 ```sh
