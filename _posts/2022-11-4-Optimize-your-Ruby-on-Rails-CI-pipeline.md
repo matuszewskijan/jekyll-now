@@ -315,13 +315,15 @@ I am about to write a full article on setting up and using `Parallel_tests` so l
 
 GitHub-hosted runners are great as they work out-of-the-box, but there is one main drawback: **it have only a 2-core CPU and 7GB of RAM and you have no control over it.** 7GB of RAM is plenty for majority of Rails applications, but the weak CPU is usually the bottleneck.
 
-If you really want to speed up the pipeline there is an alternative - **self-hosted runners**. Those will allow you to use bulkier machines, which obviously would possitively affect the pipeline speed.
+*GitHub is [experimenting with larger runners](https://docs.github.com/en/actions/using-github-hosted-runners/using-larger-runners){:target="_blank"} but it's currently in beta and available only for those using GitHub Team or GitHub Enterprise Cloud plans.*
+
+If you really want to speed up the pipeline there is an alternative - **self-hosted runners**. Those will allow you to use bulkier machines, which obviously would positively affect the pipeline speed.
 
 It might be a great option if you already have a beefy computer for computation in your company. The one-machine setup is simple and you can read it [here](https://docs.github.com/en/enterprise-server@3.4/actions/hosting-your-own-runners/configuring-the-self-hosted-runner-application-as-a-service){:target="_blank"}.
 
 But in most cases you'd want to run multiple runners to support the parallelization, right? Thanks to [Actions Runner Controller](https://github.com/actions-runner-controller/actions-runner-controller){:target="_blank"} it's relatively straightforward to configure your `Kubernetes` cluster to autoscale with self-hosted runners.
 
-For more info on how to setup self-hosted runners I recommend you reading [Sander Knape article](https://sanderknape.com/2020/03/self-hosted-github-actions-runner-kubernetes/){:target="_blank"}  and [this one](https://10clouds.com/blog/devops/aws-runners/){:target="_blank"}  wrote by 10Clouds.
+For more info on how to setup self-hosted runners, I recommend you read [Sander Knape article](https://sanderknape.com/2020/03/self-hosted-github-actions-runner-kubernetes/){:target="_blank"}  and [this one](https://10clouds.com/blog/devops/aws-runners/){:target="_blank"} written by 10Clouds.
 
 <br>
 
