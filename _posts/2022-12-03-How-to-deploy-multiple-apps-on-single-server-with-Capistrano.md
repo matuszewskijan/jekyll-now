@@ -8,11 +8,11 @@ Almost everyone uses cloud hosting solutions like Heroku or AWS nowadays(and I d
 
 My client had an uncommon requirement - to deploy two versions of the same application twice on one server. The applications should use the same codebase but a different database, credentials and domain address as we wanted to perform some experiments.
 
-Let me first show you my solution which definitely wasn't ideal, then I'll try to cover more correct solution proposed to me after I first shared this article on [Reddit](https://www.reddit.com/r/ruby/comments/zboed1).
+Let me first show you my solution which wasn't ideal, then I'll try to cover more correct solution proposed to me after I first shared this article on [Reddit](https://www.reddit.com/r/ruby/comments/zboed1).
 
 ## Naive approach
 
-Knowing that `Capistrano` uses the `name` from `set :application, "#{name}"` to create separate directory for application code on the server I thought that I could abuse this with such code:
+Knowing that `Capistrano` uses the `name` from `set :application, "#{name}"` to create a separate directory for application code on the server I thought that I could abuse this with such code:
 ```ruby
 # config/deploy.rb
 APPS = %w[first_app second_app]
@@ -35,19 +35,19 @@ The command that we'll use to perform the deployment:
 APP=first_app bundle exec cap production deploy
 ```
 
-From perspective it is a **hacky** way to do it because:
+From perspective, it is a **hacky** way to do it because:
 1. We have to use only one deploy configuration for all tenants.
 2. It could be unclear for other devs what's going on in this implementation.
 
-The implementation worked as we expected. I was 100% sure that it's ideal as it took minutes to make it work, we reused our server = money saved. What might be wrong there?
+The implementation worked as we expected. I was 100% sure that it was ideal as it took minutes to make it work, we reused our server = money saved. What might be wrong there?
 
 ## Capistrano approach
 
-Instead of hacking the `deploy.rb` file we could just create stage specific configuration in `config/deploy` folder:
+Instead of hacking the `deploy.rb` file we could just create stage-specific configuration in `config/deploy` folder:
 ```ruby
 # production_second.rb
 
-# We are running multi-tenant application.
+# We are running a multi-tenant application.
 # It's the same server as in `production.rb` but we're deploying to a different directory.
 server "example.com", user: "deploy", roles: %w{app db web}
 
@@ -59,15 +59,15 @@ Now we could use:
 bundle exec cap production_second deploy
 ```
 
-**It's clean, it's configurable, it's definitely a better way to handle multiple apps on a single server with Capistrano.**
+**It's clean, it's configurable, it's a better way to handle multiple apps on a single server with Capistrano.**
 
 ***
 
-*You might say that it's still a little dirty. That Capistrano isn't designed to do such stuff and we should use different tool.*
+*You might say that it's still a little dirty. That Capistrano isn't designed to do such stuff and we should use a different tool.*
 
-*I'd say: maybe? But switching to something else costs time, time is money. I am always trying to find the solution that will be the smallest trade-off. We were already using Capistrano and switching to different deployment tool will be a complete burden in this case.*
+*I'd say: maybe? But switching to something else costs time, time is money. I am always trying to find the solution that will be the smallest trade-off. We were already using Capistrano and changing it would be a complete burden in this case.*
 
-*If you start a new project now and you know you will have such requirement(in 90% scenarios you won't know that beforehand), then for sure go for the tool better suited for the task.*
+*If you start a new project now and you know you will have a such requirement(in 90% of scenarios you won't know that beforehand), then for sure go for the tool better suited for the task.*
 
 <p class="centered">
 Thank you for reading!
