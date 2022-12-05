@@ -12,15 +12,27 @@ Easily one of the top 3 Freelancers I've ever worked with. The technical complex
 
 *Till Carlos*
 
-### Ruby on Rails / Elixir Development for [Charper Bonaroo](https://bonaroo.nl/){:target="_blank"}:
-He is a great all-round developer that's there when you need him. Just give him something to do and he does what's being asked, not more, not less, without wasting resources or asking too many questions. Delivered code fits the project's style and doesn't stand out negatively. Jan also has no problems with improving the project by improving documentation or setting up CIs or deployment targets.
-
-*Toby Hinloopen*
+**Achievements:**
+- Build a working platform on a short **3 weeks deadline**
+- Bug-free release
+- Helping **500 000 patients** to securely obtain their certificates
+- Participate in designing secure and scalable platform
 
 ### Ruby on Rails Development for [Scan.com](https://scan.com/){:target="_blank"}:
 Jan has worked with us now for a while on a number of different projects. He is a super hard working developer that gets almost anything you throw at home done quickly and at a high standard. I highly recommend him for any full stack projects, especially Ruby on Rails with React.
 
 *Joe Daniels*
+
+**Achievements:**
+- Find and optimize performance bottlenecks of the application using NewRelic and ensure 99th per. of response times is below 1 second
+- Extensive work on the application test suite to reduce number of bugs and achieve 99.9% user session stability according to Bugsnag
+- Implement CI pipeline using Github Actions, pre-commit hooks assuring code quality using Overcommit and application downtime alerts using Pingdom
+- Implement A/B tests that helped us to increase search results page conversion by 2%
+
+### Ruby on Rails / Elixir Development for [Charper Bonaroo](https://bonaroo.nl/){:target="_blank"}:
+He is a great all-round developer that's there when you need him. Just give him something to do and he does what's being asked, not more, not less, without wasting resources or asking too many questions. Delivered code fits the project's style and doesn't stand out negatively. Jan also has no problems with improving the project by improving documentation or setting up CIs or deployment targets.
+
+*Toby Hinloopen*
 
 ### Ruby on Rails / React Development for [Diagonal](https://diagonal.com/en/){:target="_blank"}:
 Jan did a great job. He communicated very well. During the project there were a lot of new things coming up. Jan was very professional and did an absolutely great job.
