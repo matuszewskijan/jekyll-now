@@ -54,3 +54,14 @@ Jan was great at giving recommendation on improvements to the plans and getting 
 
 ### Algolia Search Optimization for [Zentered](https://zentered.co/open-source/){:target="_blank"}:
 Everything went great from the initial contact to discussing the project, implementing the solution and support / changes afterwards. Jan was very professional and delivered great work. Thanks!
+
+***
+
+<div class="mt-5" markdown="1">
+# My Mission
+  I am there to help grow business so the number of projects and positive testiomonials is constantly growing. Is there anything I could help you with?
+  <div class="call-to-action">
+    <a href="/contact" class="button button-red">Work with me!</a>
+    <a href="/about-me" class="button button-grey">About</a>
+  </div>
+</div>
