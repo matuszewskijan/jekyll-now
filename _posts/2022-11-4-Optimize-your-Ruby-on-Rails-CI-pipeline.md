@@ -3,6 +3,7 @@ layout: post
 title: Optimize your Ruby on Rails CI pipeline
 live: true
 excerpt: Continous integration pipelines are usually slow. What we could do to change this state? I've found dozens of different strategies how to do it and want to share them with you.
+meta_description: What you can do to speed up your continous integration? I am describing 6 advanced strategies you could use to optimize your CI right away.
 ---
 
 Recently I've noticed that a short pipeline - one that consists of only few hundred tests takes about 5 minutes to finish. I've quickly checked how the situation looks in some bigger projects that I've contributed to and discovered that the average goes to approximately 10 minutes.
