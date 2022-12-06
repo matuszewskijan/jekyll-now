@@ -23,8 +23,10 @@ Even if the answer is yes - the typical flow of starting test files from the com
 The idea was simple: "if all test files follow a strict naming convention then it should be possible to find corresponding test files for all entries from the `/app` directory". Leveraging this I should be able to run `rspec spec/models/user_spec.rb` command automatically after saving `app/models/user.rb`.
 
 #### How I'd know if the tests are passing?
-That's why I decided to use a VS Code extension instead of `Guard` script. The extension will automatically switch your terminal view to the `Tests` channel in the output tab with the results of the test command execution:
-![Vaccination Portal Architecture](/images/Rails-Automatic-Test-Runner-output.png)
+That's why I decided to use a VS Code extension instead of `Guard` script. The extension will automatically switch VS Code terminal to the one named `Rails Test Runner`. The results will be displayed once the command is executed. It's also an interactive terminal so you should be able to use debugger inside the code.
+
+![Rails Automatic Test Runner](/images/VS-Code-Rails-Automatic-Test-Runner.gif)
+
 **Save your source file to automatically run its test.** The extension is available on Visual Studio Marketplace: [Rails Automatic Test Runner.](https://marketplace.visualstudio.com/items?itemName=jmatuszewski.rails-automatic-test-runner){:target="_blank"}
 
 I am using it for a few days already, tried it with both `rspec` and `minitest` projects, and I am very happy with the results so far!
