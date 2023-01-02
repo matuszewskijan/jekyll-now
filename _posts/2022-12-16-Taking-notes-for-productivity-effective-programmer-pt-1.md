@@ -21,6 +21,9 @@ The output, in other words: **value** - it's what I am focusing on. My work made
 
 And I'd be simply happy if you would find anything useful here.
 
+1. **Taking notes for productivity**
+1. **[Master Git tools](/Master-Git-Tools-programmer-pt-2/)**
+
 ***
 # Notes
 
