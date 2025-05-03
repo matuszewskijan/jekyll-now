@@ -4,36 +4,43 @@ title: About Me
 permalink: /about-me/
 ---
 
+I’ve worked on dozens of Ruby on Rails projects — and what I’ve come to value most is **connecting code to real business impact**. I enjoy building software that solves problems and creates value.
 
-During the years of my professional career, I have had the possibility to work on dozens of Ruby on Rails projects. All of the opportunities made me realize that besides software craftsmanship the thing I enjoy the most is:
+My mission is simple: **build useful tools that help people** — and do it with care, discipline, and purpose.
 
-#### Connecting programming knowledge with business goals
+### Where It Started
 
-My mission is to make the world a better place, and to acomplish that I am giving my best developing applications that are helping as many people as possible.
+I launched my first online business at 15 — a (questionably legal) blog promoting game hacks and affiliate campaigns. Not something I’m proud of, but it sparked my interest in how software and business intersect.
 
-##### Background
+That led to experiments in running fanpages, affiliate marketing, and eventually my first programming project: an eCommerce shop built from scratch in Ruby on Rails using the AliExpress API. Financially, it was a total failure — but it made me fall in love with programming which changed everything.
 
-At age of 15 I started my first online business - a blog with game hacks promoting Cash-per-action campaigns. I am not proud of it as it wasn't fully legal, but it's where my journey started so I won't skip this part.
-The next step was monetizing fanpages, then I started working on affiliate campaigns what led me to **my first programming project:**
+### Failure → Clarity
 
-I've created an eCommerce shop in **Ruby on Rails** from scratch. The idea were to pull products from the Aliexpress API and connect all of the links to my partner account. The project was a painful failure earning only 2.5$ after endless hours of development work and content creation.
+That experience showed me what I care about most: **building things that matter**.
+I realized I didn’t just enjoy writing code — I loved solving problems, owning the process, and seeing things through.
 
-#### Failures are only lessons
+So I pursued programming professionally. I spent two years in a full-time Ruby role, learning the craft and honing my skills — but I missed having visibility into the business side of the work. I wasn’t close to the decisions, the users, or the outcomes.
 
-During the work on this project I learned that programming is my big passion, I love creating things and I am naturally good at it. It was the breakpoint - **I decided to do be a professional programmer.**
-*(I have to mention that it is a much more stable source of income than online business.)*
+### Freelance: Getting Closer to What Matters
 
-It leads to my first two years in a full-time time position as a **Ruby developer**. I've learned a lot hard skills, but never really felt that my work brings real value to the business I work on. I used to be involved in much more aspects of the business than only the technical domain, and I have been missing it.
+Looking for more involvement and ownership, I left full-time employment and started freelancing. I prefer small teams, direct contact with decision-makers, and being trusted to figure things out — not just take orders.
 
-##### Switching to freelance
+I care about finding the **right solution for the business**, not just the one that pleases a manager. I ask questions, suggest improvements, and look for ways to simplify.
 
-Because of the seeking of my fullfilment I decided to leave my safety spot with regular salary and start working as a freelancer.
+## Where I Am Now
 
-Why? This way I am closer to business, I prefer working in smaller teams, closer to the business people so we could exchange or face each other ideas. I am proactive team member who is always trying to find the best solution, best solution for the business, not for the manager above me.
+I’m a **developer who understands both code and context**.
+My technical background combined with hands-on business experience lets me bridge both worlds. That’s where I deliver the most value.
 
-I am learning everyday but I believe that my current knowledge from both worlds: **programming and business** is a true value.
-If you also think so - I am open for any proposition and I would be very excited to work together!
+If that sounds like someone you’d want to work with — I’d love to talk.
+
+## Explore More
+
+You can also check out my [blog](https://jmatuszewski.com), where I write about the intersection of programming and business: how I work, what I’m learning, and how I approach challenges.
+
+## Let’s Connect
+
+If you're building something interesting — or just want to talk code, product, or strategy — reach out.
+I’m always open to a good conversation.
 
 <a href="/contact" class="button button-red">Let's talk!</a>
-
-I also invite you to [my blog](/blog) where I describe how I am tackling programming and business challenges. It's a great place to learn more about what and how I am doing things.
