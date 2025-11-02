@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Few thoughts on programming career
-live: true
+live: false
 ---
 
 I've just read "Software Craftmanship" authored by Sandro Marcuso. It gave me some thoughts on my career, few ideas that I wish I would hear earlier.
